@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const connectDB = require("./config/db");
 const booksRouter = require("./module/booksRoute");
 const usersRouter = require("./module/usersRoute");
+const rolesRouter = require("./module/rolesRoute");
 
 const app = express();
 require("dotenv").config();
@@ -11,6 +12,7 @@ require("dotenv").config();
 app.use(bodyParser.json());
 app.use("/books", booksRouter);
 app.use("/users", usersRouter);
+app.use("/roles", rolesRouter);
 
 connectDB();
 // start server

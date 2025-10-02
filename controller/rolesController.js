@@ -1,4 +1,5 @@
 const Role = require("../models/roleModel");
+import { MongoClient, ObjectId } from "mongodb";
 
 exports.getAllRole = async (req, res) => {
   const roles = await Role.find();
@@ -18,6 +19,9 @@ exports.addRole = async (req, res) => {
 };
 
 exports.editRole = async (req, res) => {
-    const roleId = req.params.id;
-    
+  const roleId = req.params.id;
+  const { name, discription } = req.body;
+
+  const role = await Role.findOne({ _id: roleId });
+  console.log({ role });
 };
