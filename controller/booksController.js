@@ -28,7 +28,7 @@ exports.editBooks = (req, res) => {
   ];
   res
     .status(200)
-    .json({ message: "Cập nhật sách  thành công", results: books });
+    .json({ message: "Cập nhật sách thành công", results: books });
 };
 
 exports.deleteBooks = (req, res) => {
