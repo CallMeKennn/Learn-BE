@@ -10,6 +10,14 @@ exports.getAllRole = async (req, res) => {
 exports.addRole = async (req, res) => {
   const { name, discription } = req.body;
   if (!name) return res.status(400).json({ message: "Thiếu trường name" });
-  if (!discription)
-    return res.status(400).json({ message: "Thiếu mô tả" });
+  if (!discription) return res.status(400).json({ message: "Thiếu mô tả" });
+
+  const newRole = new Role({ name, discription });
+  await newRole.save();
+  res.status(201).json(newRole);
+};
+
+exports.editRole = async (req, res) => {
+    const roleId = req.params.id;
+    
 };
