@@ -1,12 +1,15 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const connectDB = require("./config/db");
-const booksRouter = require("./module/booksRoute");
-const usersRouter = require("./module/usersRoute");
-const rolesRouter = require("./module/rolesRoute");
+import express from "express";
+import bodyParser from "body-parser";
+import connectDB from "./config/db.js";
+
+import booksRouter from "./module/booksRoute.js";
+import usersRouter from "./module/usersRoute.js";
+import rolesRouter from "./module/rolesRoute.js";
+
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
-require("dotenv").config();
 
 // apply middleware
 app.use(bodyParser.json());

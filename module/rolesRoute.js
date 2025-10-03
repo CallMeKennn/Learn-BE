@@ -1,8 +1,10 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const roleController = require("../controller/rolesController");
+import roleController from "../controller/rolesController.js";
 
 //Cập nhật role Id
-router.put("/:id", roleController.editBooks);
+router.put("/:id", roleController.editRole);
+router.post("/", roleController.addRole);
+router.get("/", roleController.getAllRole);
 
-module.exports = router;
+export default router;

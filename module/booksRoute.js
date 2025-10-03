@@ -1,20 +1,20 @@
-const express = require("express");
+import express from "express"
+import booksController from "../controller/booksController.js"
 const router = express.Router();
-const bookController = require("../controller/booksController");
 
 //Lấy danh sách tất cả sách
-router.get("/", bookController.getAllBooks);
+router.get("/", booksController.getAllBooks);
 
 //Thêm sách mới
-router.post("/", bookController.createBooks);
+router.post("/", booksController.createBooks);
 
 //Cập nhật thông tin sách theo Id
-router.put("/:id", bookController.editBooks);
+router.put("/:id", booksController.editBooks);
 
 //Xóa sách theo id
-router.delete("/:id", bookController.deleteBooks);
+router.delete("/:id", booksController.deleteBooks);
 
 //Tìm sách theo từ khóa trong title.
-router.get("/search", bookController.searchBooks);
+router.get("/search", booksController.searchBooks);
 
-module.exports = router;
+export default router;
